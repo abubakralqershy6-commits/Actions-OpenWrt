@@ -1,10 +1,6 @@
 #!/bin/bash
-
-# حذف مصادر الحزم الافتراضية لـ OpenWrt
+# تعيين مستودعات حزم ImmortalWrt الرسمية المستقرة
 sed -i 's/^src-git packages.*/src-git packages https:\/\/github.com\/immortalwrt\/packages.git;openwrt-23.05/' feeds.conf.default
 sed -i 's/^src-git luci.*/src-git luci https:\/\/github.com\/immortalwrt\/luci.git;openwrt-23.05/' feeds.conf.default
 sed -i 's/^src-git routing.*/src-git routing https:\/\/github.com\/immortalwrt\/routing.git;openwrt-23.05/' feeds.conf.default
 sed -i 's/^src-git telephony.*/src-git telephony https:\/\/github.com\/immortalwrt\/telephony.git;openwrt-23.05/' feeds.conf.default
-
-# إضافة مستودع إضافات ImmortalWrt المخصصة
-echo "src-git immortalwrt https://github.com/immortalwrt/immortalwrt.git;openwrt-23.05" >> feeds.conf.default
